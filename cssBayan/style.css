@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #fffbe4;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #252525;
+  padding: 3.125rem 0;
+  height: 120vh;
+}
+
+:root {
+  --main-black: #252525;
+  --main-grey: rgb(160, 160, 160);
+  --blue: rgb(95, 138, 218);
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+}
+.title {
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+.accordeon {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+   display: none;
+}
+.label {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+  height: 3.75rem;
+  overflow: hidden;
+  border-top: 0.063rem solid var(--main-grey);
+  transition: all 0.5s ease 0s;
+}
+
+.label:last-child {
+  border-bottom: 0.063rem solid var(--main-grey);
+}
+
+.label:active {
+  opacity: 70%;
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3.75rem;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+}
+.label-text {
+  font-weight: 1000;
+  font-size: 1.875rem;
+  color: var(--blue);
+  transition: all 0.3s ease 0s;
+}
+
+.label-cross {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  background: url('./src/assets/svg/cross.svg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transform: rotate(45deg);
+}
+
+
+.label-img {
+  border: 0.063rem solid var(--main-black);
+  height: 25rem;
+  margin: 0 auto;
+  border-radius: 1.25rem;
+  transform: scale(0);
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+}
+
+/*! #i1 */
+
+#i1:checked ~ .l1 {
+  height: 30rem;
+  padding-bottom: 1.25rem;
+}
+
+#i1:checked ~ .l1 .label-text {
+  color: var(--main-black);
+}
+
+#i1:checked ~ .l1 .label-cross {
+  transform: rotate(90deg);
+}
+
+#i1:checked ~ .l1 .label-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*! #i2 */
+
+#i2:checked ~ .l2 {
+   height: 30rem;
+   padding-bottom: 1.25rem;
+}
+
+#i2:checked ~ .l2 .label-text {
+  color: var(--main-black);
+}
+
+#i2:checked ~ .l2 .label-cross {
+  transform: rotate(90deg);
+}
+
+#i2:checked ~ .l2 .label-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*! #i3 */
+
+#i3:checked ~ .l3 {
+   height: 30rem;
+   padding-bottom: 1.25rem;
+}
+
+#i3:checked ~ .l3 .label-text {
+  color: var(--main-black);
+}
+
+#i3:checked ~ .l3 .label-cross {
+  transform: rotate(90deg);
+}
+
+#i3:checked ~ .l3 .label-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*! #i4 */
+
+#i4:checked ~ .l4 {
+   height: 30rem;
+   padding-bottom: 1.25rem;
+}
+
+#i4:checked ~ .l4 .label-text {
+  color: var(--main-black);
+}
+
+#i4:checked ~ .l4 .label-cross {
+  transform: rotate(90deg);
+}
+
+#i4:checked ~ .l4 .label-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*! #i5 */
+
+#i5:checked ~ .l5 {
+   height: 30rem;
+   padding-bottom: 1.25rem;
+}
+
+#i5:checked ~ .l5 .label-text {
+  color: var(--main-black);
+}
+
+#i5:checked ~ .l5 .label-cross {
+  transform: rotate(90deg);
+}
+
+#i5:checked ~ .l5 .label-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (min-width: 51.25rem) {
+  .label:hover {
+   height: 30rem;
+   padding-bottom: 1.25rem;
+  }
+  .accordeon:hover .label-text {
+    color: var(--main-black);
+  }
+  .label:hover .label-cross {
+    transform: rotate(45deg);
+  }
+
+  .accordeon:hover .label-cross {
+    opacity: 1;
+  }
+  .label:hover .label-img {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 62.5rem) {
+  .l2 .label-img {
+    height: 18.75rem;
+  }
+
+  #i2:checked ~ .l2 {
+    height: 23.75rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .l4 .label-img {
+    height: 18.75rem;
+  }
+
+  #i4:checked ~ .l4 {
+   height: 23.75rem;
+   padding-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 53.125rem) {
+  .label-text {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width:49.25rem) {
+    .title {
+      font-size: 2.5rem;
+    }
+    body {
+      padding: 2.5rem 0;
+    }
+  }
+
+  @media (max-width: 51.25rem) {
+   .label-cross {
+      opacity: 1;
+     }  
+  }
+
+  @media (max-width: 47.375rem) {
+    .label {
+      height: 6.25rem;
+    }
+
+    .label-wrapper {
+      height: 6.25rem;
+    }
+
+    /*! #i1 */
+
+    .l1 .label-img {
+      height: 18.75rem;
+    }
+
+    #i1:checked ~ .l1 {
+      height: 26.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    /*! #i2 */
+
+    .l2 .label-img {
+      height: 18.75rem;
+    }
+
+    #i2:checked ~ .l2 {
+      height: 26.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    /*! #i3 */
+
+    .l3 .label-img {
+      height: 18.75rem;
+    }
+
+    #i3:checked ~ .l3 {
+      height: 26.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    /*! #i4 */
+
+    #i4:checked ~ .l4 {
+      height: 26.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    /*! #i5 */
+
+    .l5 .label-img {
+      height: 18.75rem;
+    }
+
+    #i5:checked ~ .l5 {
+      height: 26.25rem;
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  @media (max-width: 38.75rem) {
+    .l2 .label-img {
+      height: 12.5rem;
+    }
+
+    #i2:checked ~ .l2 {
+      height: 20rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .l4 .label-img {
+      height: 12.5rem;
+    }
+
+    #i4:checked ~ .l4 {
+      height: 20rem;
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  @media (max-width: 27.5rem) {
+    .title {
+      font-size: 2.25rem;
+    }
+
+    .label-text {
+      font-size: 1.25rem;
+    }
+
+    .label {
+      height: 5rem;
+    }
+
+    .label-wrapper {
+      height: 5rem;
+      padding: 0 0.5rem;
+    }
+
+    .l2 .label-img {
+      height: 9.375rem;
+    }
+
+    #i2:checked ~ .l2 {
+      height: 15.625rem;
+    }
+
+    .l4 .label-img {
+      height: 9.375rem;
+    }
+
+    #i4:checked ~ .l4 {
+      height: 15.625rem;
+    }
+
+    .l3 .label-img {
+      height: 12.5rem;
+    }
+
+    #i3:checked ~ .l3 {
+      height: 18.75rem;
+    }
+
+    .l5 .label-img {
+      height: 12.5rem;
+    }
+
+    #i5:checked ~ .l5 {
+      height: 18.75rem;
+    }
+  }
+
+  @media (max-width: 23.125rem) {
+   .l1 .label-img {
+      height: 15.625rem;
+    }
+
+    #i1:checked ~ .l1 {
+      height: 23.125rem;
+      padding-bottom: 1.25rem;
+    }
+  }
+}
